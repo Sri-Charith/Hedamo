@@ -1,108 +1,153 @@
-# Hedamo — Product Disclosure Registry
+# Product Disclosure UI
 
-Hedamo is a professional, institutional-grade product registry interface built for producer-declared disclosures. It is designed with a "trust through transparency" philosophy, focusing on neutral, objective presentation of healthcare and industrial product information.
-
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![React](https://img.shields.io/badge/React-19-blue.svg)
-![Tailwind](https://img.shields.io/badge/Tailwind-v4-38B2AC.svg)
-
-## 🏛️ Design Philosophy
-
-Hedamo departs from traditional e-commerce or marketing-led interfaces. Instead, it adopts an **Institutional Design System** similar to fintech, healthcare registries, or government portals.
-
-### High-Impact Design Prompt
-The entire UI was built following this core logic:
-> "Design a Product Disclosure system that feels institutional, calm, and trustworthy. Use a neutral palette with a single blue-600 accent. Every interaction must be restrained. The language must strictly reflect 'disclosure' and never imply 'verification' or 'certification'."
+A frontend web application for browsing and viewing **producer-declared product information**. The system is designed to prioritize **clarity, transparency, and institutional-grade presentation**, without implying verification, approval, certification, or endorsement of any product data.
 
 ---
 
-## 🚀 Installation & Setup
+## Purpose
 
-### Prerequisites
-- **Node.js**: Version 18.0 or higher
-- **npm**: Version 9.0 or higher
+This project demonstrates a disclosure-first user interface pattern suitable for regulated, quasi-regulated, or trust-sensitive domains (e.g., fintech, healthcare, infrastructure, AI systems). All information displayed is explicitly **producer-reported**, and the UI language is carefully constrained to avoid authoritative or validating signals.
 
-### 1. Clone & Install
-```bash
-# Clone the repository
-git clone https://github.com/Sri-Charith/Hedamo.git
+The application is **read-only by design** and intentionally excludes transactional, approval, or enforcement workflows.
 
-# Navigate to directory
-cd hedamo
+---
 
-# Install dependencies
-npm install
+## Application Overview
+
+The system implements a **two-page disclosure experience**:
+
+### 1. Product Listing Page
+
+* Presents a catalog of products with producer-declared attributes
+* Supports search, category filtering, status filtering, and sorting
+* Uses a calm, registry-style layout optimized for scanning and comparison
+
+### 2. Product Detail Page
+
+* Displays detailed disclosure information for a selected product
+* Includes a disclosure summary, version history, and a mandatory disclaimer
+* Employs precise language to reinforce producer responsibility for all data
+
+---
+
+## Design Principles
+
+### Disclosure-Centered Communication
+
+* All content is explicitly framed as producer-declared
+* No language implying validation, approval, or institutional authority
+
+### Institutional Visual Design
+
+* Muted, neutral color palette
+* Consistent spacing and typography
+* Visual conventions inspired by government, healthcare, and financial systems
+
+### Clarity Over Complexity
+
+* Predictable layouts and interactions
+* Minimal visual noise and restrained motion
+* Focus on readability and information hierarchy
+
+### Accessibility Awareness
+
+* Semantic HTML structure
+* Keyboard-accessible navigation
+* Visible focus states and accessible contrast ratios
+
+---
+
+## Technology Stack
+
+* **React** – component-based UI
+* **Vite** – fast development and build tooling
+* **Tailwind CSS** – utility-first styling with disciplined constraints
+* **Client-side state** with mock data (no backend dependencies)
+
+---
+
+## UI Characteristics
+
+* Card-based, registry-style layout
+* Muted status indicators (Draft, Submitted, Published)
+* Subtle hover and focus affordances
+* Short, consistent transitions (150–250ms)
+* Skeleton loading placeholders
+* Clear empty and no-results states
+* Fully keyboard-navigable interface
+
+---
+
+## Project Structure
+
 ```
-
-### 2. Development
-```bash
-# Start the development server
-npm run dev
-```
-The app will be available at `http://localhost:5173`.
-
-### 3. Build & Production
-```bash
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
-
----
-
-## 🎨 Visual System & Hierarchy
-
-### Color Palette
-- **Background**: `gray-50` (soft off-white)
-- **Surfaces**: `white` (cards and modula components)
-- **Borders**: `gray-200` (subtle separation)
-- **Text**: `gray-900` (Primary) / `gray-500` (Secondary)
-- **Accent**: `blue-600` (Focus, links, and primary actions)
-
-### Status Badges (Muted Professionalism)
-- **Draft**: `bg-gray-100` / `text-gray-700`
-- **Submitted**: `bg-blue-100` / `text-blue-700`
-- **Published**: `bg-green-100` / `text-green-700`
-
-### Spacing & Typography
-- **Scale**: Strict 4 / 8 / 16 / 24 / 32px increments.
-- **Typography**: Inter (Google Fonts) for high legibility and professional tone.
-- **Transitions**: Global 150–250ms ease-out for all interactions.
-
----
-
-## 🛠️ Key Features
-
-- **Product Registry Listing**: Searchable, filterable grid of disclosures.
-- **Advanced Filtering**: Categorize by industry status and sort by name or recent updates.
-- **Secure Detail View**: In-depth product disclosures including version history and evidence counts.
-- **Legal Compliance**: Prominent registry disclaimers on every detail page.
-- **Accessibility**: First-class support for keyboard navigation with visible focus-ring states.
-- **Modern Performance**: Skeleton loading states and ultra-light CSS footprint using Tailwind v4.
-
----
-
-## 📂 Project Structure
-
-```text
 hedamo/
 ├── src/
-│   ├── App.jsx        # Main application logic & routing
-│   ├── data.js       # Product and taxonomy definitions
+│   ├── App.jsx        # Application routing and core UI composition
+│   ├── data.js       # Mock product data and taxonomies
 │   ├── index.css     # Global Tailwind v4 / PostCSS styles
-│   └── main.jsx      # Entry point
+│   └── main.jsx      # Application entry point
 ├── postcss.config.js # PostCSS configuration
-├── vite.config.js    # Vite & React plugin setup
+├── vite.config.js    # Vite and React plugin setup
 └── package.json      # Dependencies and scripts
 ```
 
 ---
 
-## ⚖️ Disclaimer
-This interface is a demonstration of a disclosure-first UI. All data displayed is producer-declared; it is not certification or verification by any governing body.
+## Getting Started
+
+### Prerequisites
+
+* Node.js v18 or later
+* npm or yarn
+
+### Installation
+
+Clone the repository:
+
+```
+git clone https://github.com/your-username/product-disclosure-ui.git
+cd product-disclosure-ui
+```
+
+Install dependencies:
+
+```
+npm install
+```
+
+Start the development server:
+
+```
+npm run dev
+```
+
+Open the application in your browser:
+
+```
+http://localhost:5173
+```
 
 ---
 
-Developed with a focus on Frontend Design Maturity.
+## Available Scripts
+
+* `npm run dev` — Start the development server
+* `npm run build` — Create a production build
+* `npm run preview` — Preview the production build locally
+
+---
+
+## Disclaimer
+
+This application displays **producer-declared information only**.
+
+It does **not** certify, verify, approve, validate, or endorse any product, claim, or dataset. All information presented is the sole responsibility of the producing entity.
+
+---
+
+## Notes
+
+* This project emphasizes frontend craftsmanship, visual discipline, and UX rigor.
+* Language and visual cues are intentionally restrained to avoid signaling authority or endorsement.
+* Built for demonstration, evaluation, and design exploration purposes only.
