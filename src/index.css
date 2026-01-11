@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+}
+
+@layer components {
+
+  /* Standard badge base */
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold transition-colors duration-200 border;
+  }
+
+  /* Draft: Gray-100 / Gray-700 */
+  .status-badge-draft {
+    @apply bg-gray-100 text-gray-700 border-gray-200;
+  }
+
+  /* Submitted: Blue-100 / Blue-700 */
+  .status-badge-submitted {
+    @apply bg-blue-100 text-blue-700 border-blue-200;
+  }
+
+  /* Published: Green-100 / Green-700 */
+  .status-badge-published {
+    @apply bg-green-100 text-green-700 border-green-200;
+  }
+
+  .interactive-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2 transition-shadow duration-200;
+  }
+}
+
+/* Custom Skeleton Pulse to match card style */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(90deg, #f3f4f6 25%, #f9fafb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+@keyframes fadeInSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInSlideUp 0.5s ease-out forwards;
+}
